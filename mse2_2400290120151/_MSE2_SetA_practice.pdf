@@ -1,0 +1,129 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1641 >>\nstream\nBT
+/F1 10 Tf
+54 750 Td
+13 TL
+() Tj T*
+("MSE-II: Docker & Docker Compose Debugging Lab \(Set A\)") Tj T*
+() Tj T*
+("Practice Evidence Report") Tj T*
+() Tj T*
+(Name: mayank bisht) Tj T*
+() Tj T*
+(Roll No: 2400290120151) Tj T*
+() Tj T*
+(Section: CS-'C') Tj T*
+() Tj T*
+(I, mayank bisht, Roll No 2400290120151, declare that this practice work is my own.) Tj T*
+() Tj T*
+("Step 0") Tj T*
+() Tj T*
+(Project folder: mse2_2400290120151) Tj T*
+() Tj T*
+(Files created: .env, index.html, Dockerfile, docker-compose.yml) Tj T*
+() Tj T*
+("Q1: Find and fix four mistakes") Tj T*
+() Tj T*
+("Q1\(a\) - E1/E2/E3") Tj T*
+() Tj T*
+(E1: Docker Compose reported that services.web.port failed schema validation.) Tj T*
+() Tj T*
+(E2: I changed port to ports because Compose expects the plural key for a list of published ports.) Tj T*
+() Tj T*
+(E3: The corrected compose file used ports and the build continued to the Dockerfile.) Tj T*
+() Tj T*
+("Q1\(b\) - E1/E2/E3") Tj T*
+() Tj T*
+(E1: Docker could not find the image nginx:alpne.) Tj T*
+() Tj T*
+(E2: I changed alpne to alpine because alpine is the valid nginx image tag.) Tj T*
+() Tj T*
+(E3: The image metadata loaded successfully after the correction.) Tj T*
+() Tj T*
+("Q1\(c\) - E1/E2/E3") Tj T*
+() Tj T*
+(E1: The build reported that /index.htm was not found.) Tj T*
+() Tj T*
+(E2: I changed index.htm to index.html because the actual web page file is named index.html.) Tj T*
+() Tj T*
+(E3: The image built successfully after correcting the COPY source.) Tj T*
+() Tj T*
+("Q1\(d\) - E1/E2/E3") Tj T*
+() Tj T*
+(E1: The published port mapped the host to container port 8080, so the page did not open.) Tj T*
+ET\nendstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1620 >>\nstream\nBT
+/F1 10 Tf
+54 750 Td
+13 TL
+() Tj T*
+(E2: I changed 8080 to 80 because nginx listens on port 80 inside the container.) Tj T*
+() Tj T*
+(E3: curl http://localhost:8051 printed the page successfully.) Tj T*
+() Tj T*
+("Q2: Start a second container by hand") Tj T*
+() Tj T*
+(Command: docker run -d --name second-2400290120151 -p 8052:80 web-2400290120151:v1) Tj T*
+() Tj T*
+(curl http://localhost:8052 printed the page.) Tj T*
+() Tj T*
+(docker ps showed web-2400290120151 on 8051->80 and second-2400290120151 on 8052->80.) Tj T*
+() Tj T*
+(The second container was removed with docker rm -f second-2400290120151.) Tj T*
+() Tj T*
+("Q3: Improve the compose file") Tj T*
+() Tj T*
+(The compose file binds ./site to /usr/share/nginx/html as read-only.) Tj T*
+() Tj T*
+(curl without --build printed: Edited without rebuild) Tj T*
+() Tj T*
+(The environment entry maps STUDENT_ROLL to ${ROLL_NO}.) Tj T*
+() Tj T*
+(docker exec web-2400290120151 printenv STUDENT_ROLL printed 2400290120151.) Tj T*
+() Tj T*
+("Q4: Health check") Tj T*
+() Tj T*
+(The health check runs wget -q -O /dev/null http://127.0.0.1:80/ every 10 seconds, with a 3 second timeout and 3 retries.) Tj T*
+() Tj T*
+(docker compose ps showed: Up 22 seconds \(healthy\).) Tj T*
+() Tj T*
+(The check uses port 80 because it runs inside the container, where nginx listens on its internal port. HOST_PORT is only the host-side published port used to reach the container from outside.) Tj T*
+() Tj T*
+("Verification") Tj T*
+() Tj T*
+(Final docker compose config validation succeeded. The website, bind mount, environment variable, and health check were all verified.) Tj T*
+ET\nendstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000317 00000 n 
+0000002013 00000 n 
+0000002139 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3814
+%%EOF
